@@ -7,6 +7,7 @@
  */
 namespace app\controllers;
 
+use app\models\Books;
 use fastphp\base\Controller;
 use fastphp\db\Db;
 
@@ -27,6 +28,11 @@ class IndexController extends Controller
         ];
         $res=$pdo->where('id',1)->update('books',$data);
         var_dump($res);die;
+    }
+
+    public function test()
+    {
+        (new Books())->getOne();
     }
 
 
