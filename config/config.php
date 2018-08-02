@@ -24,6 +24,9 @@ return [
     ],
     'app' => [
         'exception_handle' => '', //自定义异常处理
-        'ext' => 'html' //自定义模板文件后缀
+        'ext' => 'html', //自定义模板文件后缀
+        'template_path' => [
+            '__static__' => STATIC_PATH
+        ]
     ]
 ];

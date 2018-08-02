@@ -21,7 +21,7 @@ class IndexController extends Controller
     
     public function index()
     {
-        $pdo = Db::pdo();
+        $pdo = Db::instance();
         $data=[
             'title' => '44444413131'
         ];

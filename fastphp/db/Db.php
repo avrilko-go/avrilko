@@ -13,17 +13,17 @@ class Db
 {
     private static $instance = null;
 
-    public static function pdo()
+    public static function instance()
     {
         if(self::$instance !== null) {
-            return self::pdo();
+            return self::$instance;
         }
 
         try {
             $config = load_config('mysql');
-            $pdo = new \MysqliDb($config);
-            self::$instance = $pdo;
-            return $pdo;
+            $instance = new \MysqliDb($config);
+            self::$instance = $instance;
+            return $instance;
         }catch (\PDOException $exception) {
             throw new \Exception($exception->getMessage());
         }
