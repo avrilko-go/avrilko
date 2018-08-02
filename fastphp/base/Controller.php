@@ -23,7 +23,7 @@ class Controller
         $this->_controller = $controller;
         $this->_action = $action;
         $option = [
-            'view_path' => APP_PATH . '/app/views/' . lcfirst($controller),
+            'view_path' => APP_PATH . 'app/views/' . lcfirst($controller) . '/',
             'cache_path' => APP_PATH . 'cache/templates_c/'
         ];
         $this ->view = new Template($option);
@@ -37,7 +37,7 @@ class Controller
     public function display($name=null, $var=[] ,$config=[])
     {
         $file_name = $name ? $name : $this->_action;
-        $this->view->display($file_name);
+        $this->view->fetch($file_name);
     }
 
 }

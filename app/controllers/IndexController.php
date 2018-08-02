@@ -16,7 +16,6 @@ class IndexController extends Controller
 
     public function say()
     {
-        $this->assign('content','测试内容');
         $this->display();
     }
     
