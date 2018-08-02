@@ -36,8 +36,6 @@ class Fastphp
         $this->removeMagicQuotes();
         //删除全局变量污染
         $this->unregisterGlobals();
-        //配置数据库设置
-        $this->setDbConfig();
         //路由配置(pathinfo方式)
         $this->route();
     }
@@ -109,18 +107,6 @@ class Fastphp
         }
     }
 
-    public function setDbConfig()
-    {
-        $dbConfig = $this->config['db'];
-        if($dbConfig) {
-            define('DB_HOST', $dbConfig['host'] ? $dbConfig['host'] : '127.0.0.1');
-            define('DB_PORT', $dbConfig['port'] ? $dbConfig['port'] : 3306);
-            define('DB_USER', $dbConfig['username'] ? $dbConfig['username'] : 'root');
-            define('DB_PASS', $dbConfig['password'] ? $dbConfig['password'] : '123456');
-            define('DB_TABLE', $dbConfig['db'] ? $dbConfig['db'] : 'test');
-        }
-    }
-
     public function route()
     {
         $default = $this->config['default'];
@@ -170,7 +156,6 @@ class Fastphp
             'fastphp\base\Model' => CORE_PATH . 'base/Model.php',
             'fastphp\base\View' => CORE_PATH . 'base/View.php',
             'fastphp\db\Db' => CORE_PATH . 'db/Db.php',
-            'fastphp\db\Sql' => CORE_PATH . 'base/Sql.php',
         ];
     }
 

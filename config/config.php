@@ -9,12 +9,14 @@
  */
 
 return [
-    'db' => [
+    'mysql' => [
         'host' => '127.0.0.1',
         'port' => 3306,
         'db' => 'book',
         'username' => 'homestead',
         'password' => 'secret',
+        'prefix' => '',
+        'charset' => 'utf8'
     ],
     'default' => [
         'controller' => 'Index', //默认控制器

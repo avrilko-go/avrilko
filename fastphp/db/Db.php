@@ -20,10 +20,8 @@ class Db
         }
 
         try {
-            $dsn = sprintf('mysql:host=%s;port=%s;dbname=%s;charset=utf8', DB_HOST, DB_PORT,DB_TABLE);
-            $option = array(\PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC);
-
-            $pdo = new \PDO($dsn, DB_USER, DB_PASS ,$option);
+            $config = load_config('mysql');
+            $pdo = new \MysqliDb($config);
             self::$instance = $pdo;
             return $pdo;
         }catch (\PDOException $exception) {

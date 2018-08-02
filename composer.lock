@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e09b7565d86814889d14de7bdcfdb6c8",
+    "content-hash": "0d526c0a05a8d179fe8a37e13a3ec101",
     "packages": [
         {
-            "name": "smarty/smarty",
-            "version": "v3.1.32",
+            "name": "joshcam/mysqli-database-class",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "ac9d4b587e5bf53381e21881820a9830765cb459"
+                "url": "https://github.com/ThingEngineer/PHP-MySQLi-Database-Class.git",
+                "reference": "db53256e86743e19c67f2c5dfa1b80557ecbd3f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/ac9d4b587e5bf53381e21881820a9830765cb459",
-                "reference": "ac9d4b587e5bf53381e21881820a9830765cb459",
+                "url": "https://api.github.com/repos/ThingEngineer/PHP-MySQLi-Database-Class/zipball/db53256e86743e19c67f2c5dfa1b80557ecbd3f6",
+                "reference": "db53256e86743e19c67f2c5dfa1b80557ecbd3f6",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -27,43 +27,35 @@
                 ]
             },
             "require": {
-                "php": ">=5.2"
+                "php": ">=5.3.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1.x-dev"
-                }
-            },
             "autoload": {
                 "files": [
-                    "libs/bootstrap.php"
+                    "MysqliDb.php",
+                    "dbObject.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0"
+                "GPL-3.0-or-later"
             ],
             "authors": [
                 {
-                    "name": "Monte Ohrt",
-                    "email": "monte@ohrt.com"
+                    "name": "Josh Campbell",
+                    "email": "josh.lee.campbell@gmail.com",
+                    "homepage": "https://github.com/joshcam",
+                    "role": "Developer"
                 },
                 {
-                    "name": "Uwe Tews",
-                    "email": "uwe.tews@googlemail.com"
-                },
-                {
-                    "name": "Rodney Rehm",
-                    "email": "rodney.rehm@medialize.de"
+                    "name": "Alexander V. Butenko",
+                    "email": "a.butenka@gmail.com",
+                    "homepage": "http://smarttechdo.com",
+                    "role": "Developer"
                 }
             ],
-            "description": "Smarty - the compiling PHP template engine",
-            "homepage": "http://www.smarty.net",
-            "keywords": [
-                "templating"
-            ],
-            "time": "2018-04-24T14:53:33+00:00"
+            "description": "PHP MySQL Wrapper and object mapper which utilizes MySQLi and prepared statements",
+            "time": "2018-07-03 09:41:17"
         },
         {
             "name": "topthink/think-template",
@@ -111,7 +103,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "joshcam/mysqli-database-class": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

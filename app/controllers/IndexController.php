@@ -18,19 +18,15 @@ class IndexController extends Controller
         $this->assign('content','测试内容');
         $this->display();
     }
-
-    public function hello()
-    {
-
-    }
-
+    
     public function index()
     {
         $pdo = Db::pdo();
-        $sql = "select * from books";
-
-        $res = $pdo->query($sql);
-
+        $data=[
+            'title' => '44444413131'
+        ];
+        $res=$pdo->where('id',1)->update('books',$data);
+        var_dump($res);die;
     }
 
 
