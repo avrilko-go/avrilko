@@ -153,8 +153,6 @@ class Fastphp
         return [
             'fastphp\base\Controller' => CORE_PATH . 'base/Controller.php',
             'fastphp\base\ExceptionHandler' => CORE_PATH . 'base/ExceptionHandler.php',
-            'fastphp\base\Model' => CORE_PATH . 'base/Model.php',
-            'fastphp\base\View' => CORE_PATH . 'base/View.php',
             'fastphp\db\Db' => CORE_PATH . 'db/Db.php',
         ];
     }
