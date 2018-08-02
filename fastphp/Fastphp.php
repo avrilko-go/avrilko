@@ -24,8 +24,6 @@ class Fastphp
 
     public function run()
     {
-        //加载composer
-        $this->loadComposer();
         //自动加载
         spl_autoload_register([$this, 'autoLoadClass']);
         //加载全局助手函数
@@ -61,11 +59,6 @@ class Fastphp
         }
 
         include $file;
-    }
-
-    public function loadComposer()
-    {
-        require APP_PATH . 'vendor/autoload.php';
     }
 
     public function registerException()

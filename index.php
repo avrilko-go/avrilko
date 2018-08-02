@@ -13,6 +13,8 @@ define('APP_PATH', __DIR__ . '/');
 //是否开启调试模式
 define('APP_DEBUG', true);
 
+require APP_PATH . 'vendor/autoload.php';
+
 //加载框架核心文件
 require APP_PATH . 'fastphp/Fastphp.php';
 

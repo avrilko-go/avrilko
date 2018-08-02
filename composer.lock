@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "99bccada065081929698167137529f9f",
+    "content-hash": "e09b7565d86814889d14de7bdcfdb6c8",
     "packages": [
         {
             "name": "smarty/smarty",
@@ -64,6 +64,48 @@
                 "templating"
             ],
             "time": "2018-04-24T14:53:33+00:00"
+        },
+        {
+            "name": "topthink/think-template",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/think-template.git",
+                "reference": "4437741ca41fe99452d1b667df242cd8ca63120c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/top-think/think-template/zipball/4437741ca41fe99452d1b667df242cd8ca63120c",
+                "reference": "4437741ca41fe99452d1b667df242cd8ca63120c",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "think\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "liu21st",
+                    "email": "liu21st@gmail.com"
+                }
+            ],
+            "description": "the php template engine",
+            "time": "2018-04-20T05:41:47+00:00"
         }
     ],
     "packages-dev": [],

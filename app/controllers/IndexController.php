@@ -7,18 +7,21 @@
  */
 namespace app\controllers;
 
+use fastphp\base\Controller;
 use fastphp\db\Db;
 
-class IndexController {
+class IndexController extends Controller
+{
 
     public function say()
     {
-        echo 1;
+        $this->assign('content','测试内容');
+        $this->display();
     }
 
     public function hello()
     {
-        echo 'hello';
+
     }
 
     public function index()
