@@ -144,7 +144,16 @@ class Fastphp
 
         $dispatch = new $controller($controllerName, $actionName);
 
-        $method = new \ReflectionMethod($controller,$actionName);
+        // 控制器实现依赖注入
+        $params = $this->dependencyInjection($controller, $actionName ,$params);
+
+        call_user_func_array([$dispatch, $actionName],$params);
+    }
+
+    //实现依赖注入
+    protected function dependencyInjection($controller, $actionName, $params)
+    {
+        $method = new \ReflectionMethod($controller, $actionName);
 
         $method_params = $method->getParameters();
 
@@ -159,7 +168,6 @@ class Fastphp
                     array_push($arr, $instance);
                 }
             }
-
         }
 
         if(!empty($params) && !empty($arr)) {
@@ -167,7 +175,8 @@ class Fastphp
         } elseif (empty($params)) {
             $params = $arr;
         }
-        call_user_func_array([$dispatch, $actionName],$params);
+
+        return $params;
     }
 
     //内核文件命名空间映射关系
