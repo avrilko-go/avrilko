@@ -8,15 +8,18 @@
 namespace app\controllers;
 
 use app\models\Books;
+use app\models\Users;
 use fastphp\base\Controller;
 use fastphp\db\Db;
 
 class IndexController extends Controller
 {
 
-    public function say()
+    public function say(Books $books, Users $users, $id)
     {
-        $this->display();
+        $books->getOne();
+        $users->index();
+        echo $id;
     }
     
     public function index()

@@ -144,6 +144,29 @@ class Fastphp
 
         $dispatch = new $controller($controllerName, $actionName);
 
+        $method = new \ReflectionMethod($controller,$actionName);
+
+        $method_params = $method->getParameters();
+
+        $arr = [];
+
+        foreach ($method_params as $param) {
+            if($param) {
+                $class = $param->getClass();
+                if(is_object($class)) {
+                    $name = $class->getName();
+                    $instance = new $name();
+                    array_push($arr, $instance);
+                }
+            }
+
+        }
+
+        if(!empty($params) && !empty($arr)) {
+            $params = array_merge($arr, $params);
+        } elseif (empty($params)) {
+            $params = $arr;
+        }
         call_user_func_array([$dispatch, $actionName],$params);
     }
 
